@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaBooking.Screens.Producto"
+             Shell.TitleColor="#376A10"
+             Title="Producto">
+
+    <Grid RowDefinitions=".05*,.1*,.85*">
+        <Label Text="Registro de Productos"
+               FontSize="Title"
+               HorizontalTextAlignment="Center"
+               TextColor="Black"/>
+
+        <Grid Grid.Row="1" Margin="-5,-30,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Frame Padding="10" VerticalOptions="Center" WidthRequest="290" BorderColor="Transparent" HeightRequest="45" Opacity="0.7" Margin="10,20,0,0" BackgroundColor="LightGray">
+                    <Grid>
+                        <SearchBar CancelButtonColor="Black"
+                                   Placeholder="Buscar producto"
+                                   PlaceholderColor="Black"
+                                   FontSize="Subtitle"
+                                   Margin="-20,0,-20,-5"
+                                   VerticalOptions="StartAndExpand"/>
+                    </Grid>
+                </Frame>
+                <Button Text="Agregar"
+                        FontSize="Small"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BackgroundColor="LightGray"
+                        CornerRadius="8"
+                        HeightRequest="45"
+                        Margin="10,20,0,0"
+                        WidthRequest="80"
+                        Padding="0"
+                        Opacity="0.7"
+                        Clicked="Button_AgregarProducto"/>
+
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
