@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaBooking.Pages.Producto"
+             Title="Producto">
+
+    <Grid RowDefinitions=".8*,.2*">
+        <Grid Grid.Row="0">
+            <StackLayout Orientation="Vertical" Margin="5,0,5,0">
+                <Grid Margin="0,10,0,0">
+                    <Border StrokeThickness="2"
+                        HeightRequest="45"
+                        StrokeShape="RoundRectangle 10"/>
+                    <Entry Placeholder="Nombre del producto"
+                       FontSize="Subtitle"
+                       CharacterSpacing="2"
+                       Margin="5,0,0,-8"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="FillAndExpand"
+                       ClearButtonVisibility="WhileEditing"/>
+                </Grid>
+                <Grid Margin="0,10,0,0">
+                    <Border StrokeThickness="2"
+                        HeightRequest="45"
+                        StrokeShape="RoundRectangle 10"/>
+                    <Entry Placeholder="Descripción de producto"
+                       FontSize="Subtitle"
+                       CharacterSpacing="2"
+                       Margin="5,0,0,-8"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="FillAndExpand"
+                       ClearButtonVisibility="WhileEditing"
+                       />
+                </Grid>
+                <Grid Margin="0,10,0,0">
+                    <Border StrokeThickness="2"
+                        HeightRequest="45"
+                        StrokeShape="RoundRectangle 10"/>
+                    <Entry Placeholder="Tipo de producto"
+                       FontSize="Subtitle"
+                       CharacterSpacing="2"
+                       Margin="5,0,0,-8"
+                       VerticalTextAlignment="Center"
+                       VerticalOptions="FillAndExpand"
+                       ClearButtonVisibility="WhileEditing"
+                       />
+                </Grid>
+                <Button Text="Agregar producto"
+                        FontSize="Subtitle"
+                        WidthRequest="200"
+                        CornerRadius="10"
+                        BackgroundColor="#376A10"
+                        FontAttributes="Bold"
+                        Margin="0,20,0,0" />
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

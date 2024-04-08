@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaBooking.Screens.Acceso"
+             Title="Acceso">
+
+    <Grid RowDefinitions=".3*,.7*">
+
+        <Grid BackgroundColor="DarkGreen" 
+              Opacity=".4"/>
+
+        <Grid VerticalOptions="Center" 
+              HorizontalOptions="Center">
+            
+            <Image Source="logo.png"
+                   HeightRequest="180"
+                   WidthRequest="180"
+                   Margin="0,-30,0,0"/>
+            
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <RoundRectangle Fill="White" 
+                            CornerRadius="30"                            
+                            Margin="0,-30,0,0"/>
+
+            <VerticalStackLayout>
+                <Label Text="¡Bienvenido!" 
+                       TextColor="#376A10" 
+                       FontSize="40" 
+                       HorizontalOptions="Center" 
+                       Margin="0"/>
+                <Label Text="Aceder para continuar" 
+                       TextColor="Grey" 
+                       FontSize="Subtitle" 
+                       HorizontalOptions="Center"/>
+
+                <StackLayout>
+                    <Frame Margin="10,30,10,0" Padding="0" 
+                           HeightRequest="60">
+
+                        <StackLayout Orientation="Horizontal">
+                            <Frame BackgroundColor="Transparent" 
+                                   BorderColor="Transparent" 
+                                   Padding="0">
+                                <Image Source="usuarioacceso.png"
+                                       Aspect="AspectFit"/>
+                            </Frame>
+
+                            <Entry x:Name="NombreUsuario"
+                                   Placeholder="Ingresar usuario"                                  
+                                   PlaceholderColor="Gray"
+                                   FontSize="18"
+                                   TextColor="Black"
+                                   Margin="0,5,0,-15"
+                                   WidthRequest="320"/>
+
+                        </StackLayout>
+                    </Frame>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Frame Margin="10,15,0,0" 
+                           Padding="0" 
+                           HeightRequest="60"
+                           BorderColor="Transparent">
+                            <Frame Padding="0"
+                                       Margin="0,0,80,0"
+                                       HeightRequest="60">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="Transparent" 
+                                               BorderColor="Transparent" 
+                                               Padding="0">
+                                        <Image Source="claveacceso.png"
+                                                   Margin="0"
+                                                   Aspect="AspectFit"/>
+                                    </Frame>
+
+                                    <Entry x:Name="ClaveUsuario"
+                                               Placeholder="Ingresar usuario"
+                                               PlaceholderColor="Gray"
+                                               FontSize="18"
+                                               TextColor="Black"
+                                               Margin="0,5,0,-15"
+                                               WidthRequest="250"
+                                               IsPassword="True"/>
+
+                                    <Button ImageSource="ocultaracceso.png"
+                                            x:Name="MostrarOjo"
+                                            BackgroundColor="Transparent"
+                                            Margin="-40,0,0,0"
+                                            Clicked="Button_MostrarOcultar"/>
+                                </StackLayout>
+                            </Frame>
+                        </Frame>
+                        
+                    </StackLayout>
+                    <Button ImageSource="huellaacceso.png"
+                            x:Name="Huella"
+                            BackgroundColor="Transparent"
+                            Margin="320,-60,5,0"
+                            HeightRequest="60"
+                            Clicked="Button_Huella"/>
+                </StackLayout>
+
+                <Button Text="Entrar"
+                        FontAttributes="Bold"
+                        FontSize="Title"                        
+                        Background="DarkGreen"
+                        HeightRequest="60"
+                        WidthRequest="200"
+                        Opacity=".9"
+                        Margin="0,40,0,0"
+                        Clicked="Button_Entrar"/>
+
+                    <Frame Margin="5,50,0,0" BorderColor="Transparent" >
+                        <StackLayout Orientation="Horizontal" Spacing="50">
+                            <Button ImageSource="instagram.png"
+                                        BackgroundColor="Transparent"
+                                        Padding="0"/>
+                            <Button ImageSource="whatsapp.png"
+                                            BackgroundColor="Transparent"
+                                            Padding="0"/>
+                            <Button ImageSource="twitter.png"
+                                            BackgroundColor="Transparent"
+                                            Padding="0"/>
+                            <Button ImageSource="linkedin.png"
+                                            BackgroundColor="Transparent"
+                                            Padding="0"/>
+                        </StackLayout>
+                    </Frame>
+ 
+
+            </VerticalStackLayout>
+            
+        </Grid>
+    </Grid>
+
+</ContentPage>

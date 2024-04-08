@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaBooking.Screens.Inicio"
+             Title="Inicio">
+
+    <StackLayout Orientation="Vertical">       
+        <Label Text="Agregar"
+               FontSize="Title"
+               FontAttributes="Bold"
+               TextColor="#376A10"
+               HorizontalTextAlignment="Center"/>
+        <Frame Padding="0" Margin="0,30,0,0" BorderColor="Transparent">
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Usuario"
+                        FontAttributes="Bold"
+                        FontSize="Title"
+                        Background="#376A10"
+                        TextColor="white"
+                        HeightRequest="150"
+                        WidthRequest="180"
+                        Clicked="Button_AgregarUsuario"
+                        Margin="5,0,0,0"/>
+                <Button Text="Producto"
+                        FontAttributes="Bold"
+                        FontSize="Title"
+                        Background="#376A10"
+                        TextColor="white"
+                        HeightRequest="150"
+                        WidthRequest="180"
+                        Clicked="Button_AgregarProducto"
+                        Margin="20,0,0,0"/>
+            </StackLayout>
+        </Frame>
+        <Frame Padding="0" Margin="0,30,0,0" BorderColor="Transparent">
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Tipo producto"
+                        FontAttributes="Bold"
+                        FontSize="Title"
+                        Background="#376A10"
+                        TextColor="white"
+                        HeightRequest="150"
+                        WidthRequest="180"
+                        Margin="5,0,0,0"
+                        Clicked="Button_AgregarTipoProducto"
+                        Padding="0"/>
+                <Button Text="Inventario"
+                        FontAttributes="Bold"
+                        FontSize="Title"
+                        Background="#376A10"
+                        TextColor="white"
+                        HeightRequest="150"
+                        WidthRequest="180"
+                        Clicked="Button_Inventario"
+                        Margin="20,0,0,0"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>

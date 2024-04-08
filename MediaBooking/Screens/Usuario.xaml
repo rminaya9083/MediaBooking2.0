@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaBooking.Screens.Usuario"
+             Title="Usuario">
+
+    <Grid RowDefinitions=".05*,.1*,.85*">
+        <Label Text="Registro"
+               FontSize="Subtitle"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               TextColor="#376A10"/>
+
+        <Grid Grid.Row="1" Margin="-5,-30,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Frame Padding="10" VerticalOptions="Center" WidthRequest="320" BorderColor="Transparent" HeightRequest="70">
+                    <Grid>
+                        <RoundRectangle CornerRadius="30"
+                                    Fill="LightGray"
+                                    HeightRequest="45"
+                                    Margin="0,0,0,3"/>
+                        <SearchBar CancelButtonColor="Black"
+                                   Placeholder="Buscar usuario"
+                                   PlaceholderColor="Black"
+                                   FontSize="Subtitle"
+                                   Margin="0,2,0,0"
+                                   VerticalOptions="StartAndExpand"/>
+                    </Grid>
+                </Frame>
+                <Button Text="Agregar"
+                        FontSize="Small"
+                        TextColor="Black"
+                        BackgroundColor="LightGray"
+                        CornerRadius="30"
+                        HeightRequest="45"
+                        Margin="-8,0,0,0"
+                        WidthRequest="80"
+                        Padding="0"
+                        Clicked="Button_AgregarUsuario"/>
+
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
