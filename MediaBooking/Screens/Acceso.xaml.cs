@@ -1,5 +1,3 @@
-using Plugin.Fingerprint.Abstractions;
-using TuApp.Droid.Services;
 
 namespace MediaBooking.Screens;
 
