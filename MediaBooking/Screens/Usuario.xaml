@@ -38,5 +38,37 @@
 
             </StackLayout>
         </Grid>
+
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2" x:Name="userList" ItemsSource="{Binding listaUsuarios}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5" CornerRadius="10" BorderColor="LightGray" HasShadow="True">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Column="0" Orientation="Vertical" Spacing="5">
+                                <Label FontAttributes="Bold" Text="{Binding nombre_usuario}" />
+                                <Label Text="{Binding correo_usuario}" />
+                                <Label Text="{Binding telefono_usuario}" />
+                                <Label Text="{Binding direccion_usuario}" />
+                                <Label FontAttributes="Bold"  TextColor="Green" Text="{Binding tipo_usuario}" />
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Start" Spacing="5">
+                                <Button BackgroundColor="Green" Text="Editar" FontAttributes="Bold" Margin="5"/>
+                                <Button BackgroundColor="Red" Text="Eliminar" FontAttributes="Bold" Margin="5"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </Grid>
 </ContentPage>
