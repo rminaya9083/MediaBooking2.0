@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace MediaBooking.API
 {
-    public class ApiService
+    public class UsuarioController
     {
         HttpClient _client;
 
-        public ApiService()
+        public UsuarioController()
         {
             var handler = new HttpClientHandler();
             handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true;

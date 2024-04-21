@@ -4,7 +4,7 @@ namespace MediaBooking.Screens;
 
 public partial class Usuario : ContentPage
 {
-    ApiService _apiService = new ApiService();
+    UsuarioController _apiService = new UsuarioController();
 
     public List<UsuarioClass> listaUsuarios;
 

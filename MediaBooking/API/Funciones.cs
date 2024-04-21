@@ -10,7 +10,7 @@ namespace MediaBooking.API
 
     public class Funciones
     {
-        private ApiService _apiService = new ApiService();
+        private UsuarioController _apiService = new UsuarioController();
 
         public async Task<bool> AgregarUsuario(UsuarioClass usuario)
         {
