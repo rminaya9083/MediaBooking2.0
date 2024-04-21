@@ -3,13 +3,82 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MediaBooking.Screens.Inventario"
              Title="Inventario">
-    <VerticalStackLayout>
-        <Label 
-            Text="En proceso de implementación"
-            FontSize="Title"
-            TextColor="#376A10"
-            FontAttributes="Bold"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <Grid RowDefinitions=".05*,.1*,.85*">
+        <Label Text="Control de Inventario"
+               FontSize="Title"
+               HorizontalTextAlignment="Center"
+               TextColor="Black"/>
+
+        <Grid Grid.Row="1" Margin="-5,-30,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Frame Padding="10" VerticalOptions="Center" WidthRequest="290" BorderColor="Transparent" HeightRequest="45" Opacity="0.7" Margin="10,20,0,0" BackgroundColor="LightGray">
+                    <Grid>
+                        <SearchBar CancelButtonColor="Black"
+                                   Placeholder="Buscar inventario"
+                                   PlaceholderColor="Black"
+                                   FontSize="Subtitle"
+                                   Margin="-20,0,-20,-5"
+                                   VerticalOptions="StartAndExpand"/>
+                    </Grid>
+                </Frame>
+                <Button Text="Agregar"
+                        FontSize="Small"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        BackgroundColor="LightGray"
+                        CornerRadius="8"
+                        HeightRequest="45"
+                        Margin="10,20,0,0"
+                        WidthRequest="80"
+                        Padding="0"
+                        Opacity="0.7"/>
+
+            </StackLayout>
+        </Grid>
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2" x:Name="inventarioList" ItemsSource="{Binding listaInventario}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10,10,10,0" Margin="5" CornerRadius="8" BorderColor="LightGray" HasShadow="True" HeightRequest="140">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Column="0" Orientation="Vertical" Spacing="8" VerticalOptions="Center">
+                                <Label Margin="10,15,0,0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Equipo: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                            <Span Text="{Binding nombreproducto}" TextColor="Black" FontSize="Title" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label HorizontalTextAlignment="Center" Margin="80,20,0,0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Cantidad: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                            <Span Text="{Binding cantidad}" TextColor="Black" FontSize="Title"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="CenterAndExpand" Spacing="5">
+                                <Button BackgroundColor="#376A10" Text="Editar" FontAttributes="Bold" Margin="10,5,-25,0" WidthRequest="80" Padding="0"/>
+                                <Button BackgroundColor="Red" Text="Eliminar" FontAttributes="Bold" Margin="10,15,-25,0" WidthRequest="80" Padding="0"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

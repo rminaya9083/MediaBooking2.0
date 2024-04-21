@@ -37,7 +37,7 @@ public partial class Usuario : ContentPage
             {
 
                 Console.WriteLine("Conteo: " + listaUsuarios.Count);
-                Console.WriteLine(listaUsuarios[0].nombre_usuario);
+                Console.WriteLine(listaUsuarios[0].nombre);
             }
             else
             {
