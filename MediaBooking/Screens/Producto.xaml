@@ -38,5 +38,35 @@
 
             </StackLayout>
         </Grid>
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2" x:Name="productoList" ItemsSource="{Binding listaProducto}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10,10,10,0" Margin="5" CornerRadius="8" BorderColor="LightGray" HasShadow="True" HeightRequest="140">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Column="0" Orientation="Vertical" Spacing="5">
+                                <Label Text="{Binding Nombre}" FontAttributes="Bold" FontSize="Subtitle" TextColor="#376A10"/>
+                                <Label Text="Descpción: " FontAttributes="Bold" TextColor="Grey" Margin="0,10,0,0"/>
+                                <Label Text="{Binding Descripcion}"  MaxLines="3" LineBreakMode="TailTruncation" FontSize="Small"/>
+
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="CenterAndExpand" Spacing="5">
+                                <Button BackgroundColor="#376A10" Text="Editar" FontAttributes="Bold" Margin="10,5,-25,0" WidthRequest="80" Padding="0"/>
+                                <Button BackgroundColor="Red" Text="Eliminar" FontAttributes="Bold" Margin="10,15,-25,0" WidthRequest="80" Padding="0"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </Grid>
 </ContentPage>

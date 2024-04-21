@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters ="clr-namespace:MediaBooking.Formatos"
              x:Class="MediaBooking.Screens.Usuario"
              Shell.TitleColor="#376A10"             
              Title="Usuario">
+
+    <ContentPage.Resources>
+        <converters:PhoneNumberConverter x:Key="PhoneNumberConverter" />
+    </ContentPage.Resources>
 
     <Grid RowDefinitions=".05*,.1*,.85*" BackgroundColor="White">
         <Label Text="Registro de Usuarios"
@@ -42,7 +47,7 @@
         <CollectionView Grid.Row="2" Grid.ColumnSpan="2" x:Name="userList" ItemsSource="{Binding listaUsuarios}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Padding="10" Margin="5" CornerRadius="10" BorderColor="LightGray" HasShadow="True">
+                    <Frame Padding="10" Margin="5" CornerRadius="8" BorderColor="LightGray" HasShadow="True" HeightRequest="140">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -54,16 +59,20 @@
                             </Grid.ColumnDefinitions>
 
                             <StackLayout Grid.Column="0" Orientation="Vertical" Spacing="5">
-                                <Label FontAttributes="Bold" Text="{Binding nombre_usuario}" />
-                                <Label Text="{Binding correo_usuario}" />
-                                <Label Text="{Binding telefono_usuario}" />
-                                <Label Text="{Binding direccion_usuario}" />
-                                <Label FontAttributes="Bold"  TextColor="Green" Text="{Binding tipo_usuario}" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Label FontAttributes="Bold" Text="{Binding nombre}"  />
+                                    <Label Text=" "/>
+                                    <Label FontAttributes="Bold" Text="{Binding apellido}"/>
+                                </StackLayout>                                
+                                <Label Text="{Binding correo}" />
+                                <Label Text="{Binding telefono, Converter={StaticResource PhoneNumberConverter}}" />
+                                <Label Text="{Binding direccion}" LineBreakMode="TailTruncation" />
+                                <Label FontAttributes="Bold"  TextColor="Green" Text="{Binding rol}" />
                             </StackLayout>
 
-                            <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="Start" Spacing="5">
-                                <Button BackgroundColor="Green" Text="Editar" FontAttributes="Bold" Margin="5"/>
-                                <Button BackgroundColor="Red" Text="Eliminar" FontAttributes="Bold" Margin="5"/>
+                            <StackLayout Grid.Column="1" Orientation="Vertical" VerticalOptions="CenterAndExpand" Spacing="5">
+                                <Button BackgroundColor="Green" Text="Editar" FontAttributes="Bold" Margin="10,5,-25,0" WidthRequest="80" Padding="0"/>
+                                <Button BackgroundColor="Red" Text="Eliminar" FontAttributes="Bold" Margin="10,15,-25,0" WidthRequest="80" Padding="0"/>
                             </StackLayout>
                         </Grid>
                     </Frame>
