@@ -1,18 +1,126 @@
 using System.Net.Mail;
 using System.Net;
+using MediaBooking.API;
+using MediaBooking.Models;
+using Microsoft.Maui.Graphics;
+
 namespace MediaBooking.Pages;
 
 public partial class Reservaciones : ContentPage
 {
-	public Reservaciones()
+    ProductoService _productoService = new ProductoService();
+
+    MateriaService _materiaService = new MateriaService();
+
+    ReservacionesService _reservacionService = new ReservacionesService();
+
+
+    public List<MateriaClass> listaMaterias;
+
+    public List<ProductoClass> listaProductos;
+    public Reservaciones()
 	{
 		InitializeComponent();
 	}
 
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        await LoadMateriasEquipos();
+    }
+
+
+
+    private async Task LoadMateriasEquipos()
+    {
+        try
+        {
+            listaProductos = await _productoService.GetProductoAsync();
+            listaMaterias = await _materiaService.GetMateriasAsync();
+
+            if (listaMaterias != null && listaMaterias.Any())
+            {
+
+                Console.WriteLine("Conteo: " + listaMaterias.Count);
+                Console.WriteLine(listaMaterias[0].nombre);
+                materia.ItemsSource = listaMaterias;
+                materia.ItemDisplayBinding = new Binding("CodigoYDia");
+                
+
+            }
+            
+            if(listaProductos != null && listaProductos.Any())
+            {
+                Console.WriteLine(listaProductos[0].Nombre);
+                producto.ItemsSource = listaProductos;
+
+                producto.ItemDisplayBinding = new Binding("Nombre");
+
+
+
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", "Error al cargar usuarios: " + ex.Message, "Ok");
+        }
+
+
+
+    }
+
     async void OnButtonClicked(object senders, EventArgs args)
     {
-        string mail = correo.text;
-        string estudiante = matricula.text, fecha=horario.text , aula2 = aula.text, articulo2 = articulo.text;
+
+        ProductoClass Producto = producto.SelectedItem as ProductoClass;
+
+        MateriaClass Materia = materia.SelectedItem as MateriaClass;
+
+        int idSolicitante = 3;
+
+
+        DateOnly fecha_fin = DateOnly.FromDateTime( fecha_pic.Date);
+
+
+        ReservacionClass reservacion = new()
+        {
+            
+            idsolicitante = idSolicitante,
+            idmateria = Materia.id,
+            idproducto = Producto.Id,
+            estatus = "En proceso",
+            idauxiliar = null,
+            fechareserva = fecha_fin,
+            Usuario = UserDataService.CurrentUser,
+            Materias = Materia,
+            Producto = Producto,
+            Auxiliar = UserDataService.CurrentUser
+
+            
+        };
+
+        bool isAdded = await _reservacionService.AddReservacionAsync(reservacion);
+
+        if (isAdded)
+        {
+            await DisplayAlert("Producto agregado correctamente", "Proceso completado", "Ok");
+            
+        }
+
+        else
+        {
+            await DisplayAlert("Klk, no se pudo na", "Proceso fallido", "Na, pa lante");
+        }
+
+
+
+
+
+
+
+        /*string mail = correo.Text;
+        string estudiante = matricula.Text, fecha="", aula2 = aula.Text, articulo2 = "";
 
         string cuerpo = @"<style>
                             h1{color:#1E8449;}
@@ -22,6 +130,7 @@ public partial class Reservaciones : ContentPage
                             <h2>Le confirmamos que fue ejecutada correctamente la reservaci&oacute;n realizada por la matr&iacute;cula: " + estudiante + ", en fecha: " + fecha + " a utilizarse" +
                         " en el aula: " + aula2 + ".<br><br>Art&iacute;culo reservado: " + articulo2 + "</h2>";
         sendMail(mail, "Reservación de Recurso Audiovisual - MediaBooking", cuerpo);
+        */
     }
 
     public void sendMail(string correo, string asunto, string cuerpo)
@@ -53,9 +162,27 @@ public partial class Reservaciones : ContentPage
         catch (Exception ex)
         {
             msge = ex.Message + ". Por favor verifica tu conexión a internet y que tus datos sean correctos e intenta nuevamente.";
-            MessageBox.Show(ex.Message);
+            
 
         }
     }
 
+    private void materia_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (materia.SelectedIndex == -1)
+        {
+            return;
+
+        }
+
+        MateriaClass materia_seleccionada = materia.SelectedItem as MateriaClass;
+
+        aula.Text = materia_seleccionada.curso;
+
+
+
+
+
+
+    }
 }

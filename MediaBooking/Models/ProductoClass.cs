@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
+
 namespace MediaBooking.Models
 {
     public class ProductoClass
@@ -16,6 +17,9 @@ namespace MediaBooking.Models
 
         [Column("IdTipoProducto")]
         public int? IdTipoProducto { get; set; }
+
+        [Column("FechaRegistro")]
+        public DateTime FechaRegistro { get; set; }
 
         
 

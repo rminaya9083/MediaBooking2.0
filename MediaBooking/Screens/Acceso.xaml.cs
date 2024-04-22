@@ -56,6 +56,7 @@ public partial class Acceso : ContentPage
                     Application.Current.MainPage = new FlyoutEstudiante();
                 }
 
+                UserDataService.CurrentUser = usuarioAutenticado;
             }
             else
             {
