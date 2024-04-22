@@ -2,6 +2,7 @@
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Pages ="clr-namespace:MediaBooking.Pages"
+             xmlns:Screens ="clr-namespace:MediaBooking.Screens"
              x:Class="MediaBooking.FlyoutEstudiante"
              Shell.ForegroundColor="Black"
              Title="FlyoutEstudiante">
@@ -30,10 +31,14 @@
     <FlyoutItem Title="Inicio" Icon="reservaciones.png">
         <ShellContent ContentTemplate="{DataTemplate Pages:Reservaciones}"/>
     </FlyoutItem>
+    <FlyoutItem Title="Huella" Icon="huellaacceso.png">
+        <ShellContent ContentTemplate="{DataTemplate Screens:Huella}" />
+    </FlyoutItem>
+
 
     <Shell.FlyoutFooter>
         <StackLayout Orientation="Vertical">
-            <Button Text="Cerrar sección"
+            <Button Text="Cerrar seción"
                     FontAttributes="Bold"
                     TextColor="White"
                     BackgroundColor="Red"

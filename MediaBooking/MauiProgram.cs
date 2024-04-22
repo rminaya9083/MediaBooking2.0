@@ -21,7 +21,7 @@ namespace MediaBooking
 
 #if DEBUG
     		builder.Logging.AddDebug();
-            builder.Services.AddSingleton(typeof(IFingerprint), CrossFingerprint.Current);
+            builder.Services.AddSingleton<IFingerprint>(CrossFingerprint.Current);
 #endif
 
             return builder.Build();

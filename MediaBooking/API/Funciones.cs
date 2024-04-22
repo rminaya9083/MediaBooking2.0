@@ -1,9 +1,4 @@
 ﻿using MediaBooking.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MediaBooking.API
 {
@@ -11,11 +6,23 @@ namespace MediaBooking.API
     public class Funciones
     {
         private UsuarioController _apiService = new UsuarioController();
+        private TipoProductoService _tipoproducto = new TipoProductoService();
+        private ProductoService _productoService = new ProductoService();
 
         public async Task<bool> AgregarUsuario(UsuarioClass usuario)
         {
             return(await _apiService.AddUsuarioAsync(usuario));
 
+        }
+
+        public async Task<bool> AgregarTipoProducto(TipoProductoClass tipoproducto)
+        {
+            return (await _tipoproducto.AddTipoProductoAsync(tipoproducto));
+        }
+
+        public async Task<bool> AgregarProducto(ProductoClass producto)
+        {
+            return (await _productoService.AddProductoAsync(producto));
         }
     }
 }

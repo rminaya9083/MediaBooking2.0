@@ -6,36 +6,36 @@ public partial class ReservacionesUsuario : ContentPage
 {
     ReservacionesService _ReservacionesService = new ReservacionesService();
 
-    public List<ReservacionesClass> listaReservaciones;
+    public List<ReservacionesClass> listaReservacionesUsuario;
 
     public ReservacionesUsuario()
-	{
+    {
         InitializeComponent();
-	}
+    }
 
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        await LoadReservaciones();
+        await LoadReservacionesUsuario();
 
-        reservacionesList.ItemsSource = listaReservaciones;
+        reservacionesUsuarioList.ItemsSource = listaReservacionesUsuario;
     }
 
-    private async Task LoadReservaciones()
+    private async Task LoadReservacionesUsuario()
     {
         try
         {
-            listaReservaciones = await _ReservacionesService.GetReservacionesAsync();
+            listaReservacionesUsuario = await _ReservacionesService.GetReservacionesAsync();
 
-            if (listaReservaciones != null && listaReservaciones.Any())
+            if (listaReservacionesUsuario != null && listaReservacionesUsuario.Any())
             {
 
-                Console.WriteLine("Conteo: " + listaReservaciones.Count);
-                Console.WriteLine("Primer reservaciones" + listaReservaciones[0].id);
+                Console.WriteLine("Conteo: " + listaReservacionesUsuario.Count);
+                Console.WriteLine("Primer reservaciones" + listaReservacionesUsuario[0].id);
             }
             else
             {
-                Console.WriteLine(listaReservaciones);
+                Console.WriteLine(listaReservacionesUsuario);
                 await DisplayAlert("Error", "No se encontraron reservaciones", "Ok");
             }
         }

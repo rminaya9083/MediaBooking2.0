@@ -28,10 +28,13 @@
     <FlyoutItem Title="Inicio" Icon="reservaciones.png">
         <ShellContent ContentTemplate="{DataTemplate Screens:ReservacionesUsuario}"/>
     </FlyoutItem>
+    <FlyoutItem Title="Huella" Icon="huellaacceso.png">
+        <ShellContent ContentTemplate="{DataTemplate Screens:Huella}" />
+    </FlyoutItem>
 
     <Shell.FlyoutFooter>
         <StackLayout Orientation="Vertical">
-            <Button Text="Cerrar sección"
+            <Button Text="Cerrar seción"
                     FontAttributes="Bold"
                     TextColor="White"
                     BackgroundColor="Red"

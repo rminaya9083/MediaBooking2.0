@@ -133,30 +133,30 @@ public partial class Reservaciones : ContentPage
         */
     }
 
-    public void sendMail(string correo, string asunto, string cuerpo)
-    {
-        string msge = "Error al enviar este correo. Por favor verifique los datos o intente más tarde.";
-        string origen = "yojannyvp@outlook.es";
-        string displayName = "MediaBooking - MasterMail";
-        try
-        {
-            MailMessage mail = new MailMessage();
-            mail.From = new MailAddress(origen, displayName);
-            mail.To.Add(correo);
-            mail.Bcc.Add("yojannyvp@gmail.com");
+    //public void sendMail(string correo, string asunto, string cuerpo)
+    //{
+    //    string msge = "Error al enviar este correo. Por favor verifique los datos o intente más tarde.";
+    //    string origen = "yojannyvp@outlook.es";
+    //    string displayName = "MediaBooking - MasterMail";
+    //    try
+    //    {
+    //        MailMessage mail = new MailMessage();
+    //        mail.From = new MailAddress(origen, displayName);
+    //        mail.To.Add(correo);
+    //        mail.Bcc.Add("yojannyvp@gmail.com");
 
-            mail.Subject = asunto;
-            mail.Body = cuerpo;
-            mail.IsBodyHtml = true;
-
-
-            SmtpClient client = new SmtpClient("smtp.office365.com", 587); //Aquí debes sustituir tu servidor SMTP y el puerto
-            client.Credentials = new NetworkCredential(origen, "TechFun27112015");
-            client.EnableSsl = true;//En caso de que tu servidor de correo no utilice cifrado SSL,poner en false
+    //        mail.Subject = asunto;
+    //        mail.Body = cuerpo;
+    //        mail.IsBodyHtml = true;
 
 
-            client.Send(mail);
-            msge = "¡Correo enviado exitosamente! Pronto te contactaremos.";
+    //        SmtpClient client = new SmtpClient("smtp.office365.com", 587); //Aquí debes sustituir tu servidor SMTP y el puerto
+    //        client.Credentials = new NetworkCredential(origen, "TechFun27112015");
+    //        client.EnableSsl = true;//En caso de que tu servidor de correo no utilice cifrado SSL,poner en false
+
+
+    //        client.Send(mail);
+    //        msge = "¡Correo enviado exitosamente! Pronto te contactaremos.";
 
         }
         catch (Exception ex)

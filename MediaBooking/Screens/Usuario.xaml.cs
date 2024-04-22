@@ -21,7 +21,6 @@ public partial class Usuario : ContentPage
         await Navigation.PushAsync(new Pages.Usuario());
     }
 
-
     protected override async void OnAppearing()
     {
         base.OnAppearing();
