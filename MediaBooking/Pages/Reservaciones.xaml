@@ -161,7 +161,7 @@
                     BackgroundColor="#376A10"
                     FontAttributes="Bold"
                     Margin="50,0,50,0"
-					Clicked="OnButtonClicked"
+					
 					/>
         </StackLayout>
     </Grid>

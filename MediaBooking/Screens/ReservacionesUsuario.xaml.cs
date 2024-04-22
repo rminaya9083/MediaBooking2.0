@@ -9,9 +9,9 @@ public partial class ReservacionesUsuario : ContentPage
     public List<ReservacionesClass> listaReservacionesUsuario;
 
     public ReservacionesUsuario()
-	{
+    {
         InitializeComponent();
-	}
+    }
 
     protected override async void OnAppearing()
     {
@@ -24,8 +24,8 @@ public partial class ReservacionesUsuario : ContentPage
     private async Task LoadReservacionesUsuario()
     {
         try
-        {            
-              listaReservacionesUsuario = await _ReservacionesService.GetReservacionesAsync();
+        {
+            listaReservacionesUsuario = await _ReservacionesService.GetReservacionesAsync();
 
             if (listaReservacionesUsuario != null && listaReservacionesUsuario.Any())
             {
