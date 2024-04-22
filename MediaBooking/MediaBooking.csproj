@@ -131,6 +131,9 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+	  <PackageReference Include="Xamarin.AndroidX.Biometric">
+	    <Version>1.1.0.18</Version>
+	  </PackageReference>
 	  <PackageReference Include="Xamarin.AndroidX.Migration">
 	    <Version>1.0.10</Version>
 	  </PackageReference>
