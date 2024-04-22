@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:Screens ="clr-namespace:MediaBooking.Screens"
              xmlns:Pages ="clr-namespace:MediaBooking.Pages"
+             x:Class="MediaBooking.FlyoutEstudiante"
              Shell.ForegroundColor="Black"
-             Shell.FlyoutBehavior="Flyout"
-             x:Class="MediaBooking.FlyoutMenu"
-             Title="FlyoutMenu">
+             Title="FlyoutEstudiante">
+
 
     <Shell.FlyoutHeader>
         <Grid BackgroundColor="Transparent" 
@@ -28,26 +27,8 @@
         </Grid>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Inicio" Icon="inicio.png">
-        <ShellContent ContentTemplate="{DataTemplate Screens:Inicio}"/>
-    </FlyoutItem>
-    <FlyoutItem Title="Usuario" Icon="usuario.png">
-        <ShellContent ContentTemplate="{DataTemplate Screens:Usuario}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Producto" Icon="producto.png">
-        <ShellContent ContentTemplate="{DataTemplate Screens:Producto}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Tipo producto" Icon="tipoproducto.png">
-        <ShellContent ContentTemplate="{DataTemplate Screens:TipoProducto}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Reservaciones" Icon="reservaciones.png">
-        <ShellContent ContentTemplate="{DataTemplate Screens:Reservaciones}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Inventario" Icon="inventario.png">
-        <ShellContent ContentTemplate="{DataTemplate Screens:Inventario}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Acerca" Icon="acerca.png">
-        <ShellContent ContentTemplate="{DataTemplate Pages:Reservaciones}" />
+    <FlyoutItem Title="Inicio" Icon="reservaciones.png">
+        <ShellContent ContentTemplate="{DataTemplate Pages:Reservaciones}"/>
     </FlyoutItem>
 
     <Shell.FlyoutFooter>
@@ -69,7 +50,6 @@
             </Frame>
         </StackLayout>
     </Shell.FlyoutFooter>
-  
 
 
 </Shell>

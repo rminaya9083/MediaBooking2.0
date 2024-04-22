@@ -57,7 +57,6 @@ public partial class Usuario : ContentPage
 		}
 
 
-
 	}
 
 	private async void OnSubmit(object sender, EventArgs e)
@@ -86,8 +85,9 @@ public partial class Usuario : ContentPage
 			direccion = direccion.Text.Trim(),
 			rol = tipoUsuario,
 			clave = password.Text.Trim(),
+
 			registro = DateTime.Now,
-			
+
 
 		};
 

@@ -6,7 +6,8 @@
         {
             InitializeComponent();
 
-            MainPage = new FlyoutMenu();
+            //MainPage = new FlyoutMenu();
+            MainPage = new MediaBooking.Screens.Acceso();
         }
     }
 }

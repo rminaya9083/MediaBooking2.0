@@ -92,8 +92,42 @@ namespace MediaBooking.API
                 Console.WriteLine("Error genérico: " + e.Message);
                 return new List<UsuarioClass>();
             }
-
             
+        }
+
+        public async Task<UsuarioClass> AuthenticateUsuarioAsync(string username, string password)
+        {
+            try
+            {
+                var loginModel = new { Username = username, Password = password };
+                var json = JsonConvert.SerializeObject(loginModel);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await _client.PostAsync("https://10.0.2.2:7113/api/Usuarios/authenticate", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<UsuarioClass>(jsonResponse);
+                }
+                else
+                {
+                    // Log o manejo de errores específicos
+                    var errorContent = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Error al autenticar usuario: {errorContent}");
+                    return null;
+                }
+            }
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine($"Error en la solicitud HTTP: {e.Message}");
+                return null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error genérico: {e.Message}");
+                return null;
+            }
         }
     }
 }

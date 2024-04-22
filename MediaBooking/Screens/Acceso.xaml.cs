@@ -1,4 +1,4 @@
-
+using MediaBooking.API;
 namespace MediaBooking.Screens;
 
 public partial class Acceso : ContentPage
@@ -33,15 +33,34 @@ public partial class Acceso : ContentPage
     {
         if (string.IsNullOrEmpty(NombreUsuario.Text) || string.IsNullOrEmpty(ClaveUsuario.Text))
         {
-            await DisplayAlert("¡Advertencia!","Debe llenar todos los campos","OK");
-        } 
-        else if (NombreUsuario.Text == "admin" && ClaveUsuario.Text == "123")
-        {
-            Application.Current.MainPage = new FlyoutMenu();
+            await DisplayAlert("¡Advertencia!", "Debe llenar todos los campos", "OK");
         }
         else
         {
-            await DisplayAlert("¡Error!", "Usuario o contraseña incorrecta", "OK");
+            UsuarioController usuarioController = new UsuarioController();
+            var usuarioAutenticado = await usuarioController.AuthenticateUsuarioAsync(NombreUsuario.Text, ClaveUsuario.Text);
+
+            if (usuarioAutenticado != null)
+            {
+
+                if (usuarioAutenticado.rol == "Administrador")
+                {
+                    Application.Current.MainPage = new FlyoutMenu();
+                }
+                else if (usuarioAutenticado.rol == "Usuario")
+                {
+                    Application.Current.MainPage = new FlyoutUsuario();
+                }
+                else
+                {
+                    Application.Current.MainPage = new FlyoutEstudiante();
+                }
+
+            }
+            else
+            {
+                await DisplayAlert("¡Error!", "Usuario o contraseña incorrecta", "OK");
+            }
         }
     }
 }

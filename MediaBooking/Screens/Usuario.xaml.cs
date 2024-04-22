@@ -9,11 +9,20 @@ public partial class Usuario : ContentPage
     public List<UsuarioClass> listaUsuarios;
 
     public Usuario()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
 
+<<<<<<< HEAD
+    private async void Button_AgregarUsuario(object sender, EventArgs e)
+    {
+        var addUserPage = new Pages.Usuario();
+        addUserPage.Disappearing += (sender, e) => OnAppearing();
+        await Navigation.PushAsync(new Pages.Usuario());
+    }
+=======
     
+>>>>>>> d3694a5188752e4526a8cf7af31769c7e9b8313f
 
     protected override async void OnAppearing()
     {
@@ -28,10 +37,15 @@ public partial class Usuario : ContentPage
     {
         try
         {
+            var todosLosUsuarios = await _apiService.GetUsuariosAsync();
             listaUsuarios = await _apiService.GetUsuariosAsync();
 
             if (listaUsuarios != null && listaUsuarios.Any())
             {
+
+                listaUsuarios = todosLosUsuarios
+                    .Where(u => u.rol == "Usuario" || u.rol == "Administrador")
+                    .ToList();
 
                 Console.WriteLine("Conteo: " + listaUsuarios.Count);
                 Console.WriteLine(listaUsuarios[0].nombre);

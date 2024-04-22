@@ -36,7 +36,7 @@
                 
                 
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Usuario:" 
+                    <Label Text="Nombre:" 
                        Margin="15,10,0,0" 
                        FontSize="Subtitle" 
                        FontAttributes="Bold" 
@@ -280,14 +280,14 @@
         </Grid>
         <StackLayout Grid.Row="1">
             <Button Text="Agregar"
- Clicked="OnSubmit"
-FontSize="Subtitle"
-HorizontalOptions="FillAndExpand"
-HeightRequest="50"
-CornerRadius="7"
-BackgroundColor="#376A10"
-FontAttributes="Bold"
-Margin="50,40,50,0" />
+                    Clicked="OnSubmit"
+                    FontSize="Subtitle"
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="50"
+                    CornerRadius="7"
+                    BackgroundColor="#376A10"
+                    FontAttributes="Bold"
+                    Margin="50,40,50,0" />
         </StackLayout>
     </Grid>
     
