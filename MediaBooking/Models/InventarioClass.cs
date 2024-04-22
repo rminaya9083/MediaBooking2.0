@@ -20,8 +20,5 @@ namespace MediaBooking.Models
         public int? idproducto { get; set; }  
         
         public string nombreproducto { get; set; }
-
-        //[ForeignKey("IdProducto")]  // Correctly configured to reference the navigation property.
-        //public virtual Producto Producto { get; set; }
     }
 }
