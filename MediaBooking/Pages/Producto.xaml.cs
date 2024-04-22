@@ -39,12 +39,12 @@ public partial class Producto : ContentPage
             }
             else
             {
-                
+
             }
         }
         catch (Exception ex)
         {
-            await DisplayAlert("Error", "Error al cargar usuarios: " + ex.Message, "Ok");
+            await DisplayAlert("Error", "Error al cargar los tipos de productos: " + ex.Message, "Ok");
         }
 
 
@@ -77,13 +77,7 @@ public partial class Producto : ContentPage
         {
             await DisplayAlert("Klk, no se pudo na", "Proceso fallido", "Na, pa lante");
         }
-
-
-
-
-
-
-    }
+            }
 
     private void Limpiar(IView root)
     {

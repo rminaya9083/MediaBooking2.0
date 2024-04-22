@@ -5,8 +5,8 @@ public partial class FlyoutEstudiante : Shell
 
     public FlyoutEstudiante()
 	{
-		InitializeComponent();
-	}
+        InitializeComponent();
+    }
 
     private async void Button_CerrarSeccion(object sender, EventArgs e)
     {

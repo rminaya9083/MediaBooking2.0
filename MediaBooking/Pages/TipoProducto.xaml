@@ -6,7 +6,7 @@
              Shell.BackgroundColor="#FAFAFA"
              Title="TipoProducto">
 
-    <Grid RowDefinitions=".8*,.2*" BackgroundColor="#FAFAFA">
+    <Grid x:Name="parent" RowDefinitions=".8*,.2*" BackgroundColor="#FAFAFA">
         <Grid Grid.Row="0">            
             <StackLayout Orientation="Vertical" Margin="5,0,5,0">
                 <Label Text="Registrar Tipo de producto" Margin="15,10,0,0" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
@@ -27,11 +27,11 @@
                            BorderColor="Black"
                            />
                     <Entry Placeholder="Tipo de producto"
+                           x:Name="Nombre"
                       FontSize="Subtitle"
                       Margin="15,0,10,-6.9"
                       VerticalOptions="FillAndExpand"
                       ClearButtonVisibility="WhileEditing"
-                      PlaceholderColor="#6F6F6F" 
                       TextColor="Black"/>
                 </Grid>
                 <Label Text="Descripción:" 
@@ -47,13 +47,13 @@
                            HeightRequest="50" 
                            BorderColor="Black"/>
                     <Entry Placeholder="Descripción"
+                           x:Name="Descripcion"
                       FontSize="Subtitle"
                       CharacterSpacing="2"
                       Margin="15,0,10,-6.9"
                       VerticalTextAlignment="Center"
                       VerticalOptions="FillAndExpand"
                       ClearButtonVisibility="WhileEditing"
-                      PlaceholderColor="#6F6F6F" 
                       TextColor="Black"/>
                 </Grid>
                 
@@ -63,13 +63,14 @@
         </Grid>
         <StackLayout Grid.Row="1">
             <Button Text="Agregar"
-FontSize="Subtitle"
-HorizontalOptions="FillAndExpand"
-HeightRequest="50"
-CornerRadius="7"
-BackgroundColor="#376A10"
-FontAttributes="Bold"
-Margin="50,60,50,0" />
+                    FontSize="Subtitle"
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="50"
+                    CornerRadius="7"
+                    BackgroundColor="#376A10"
+                    FontAttributes="Bold"
+                    Margin="50,60,50,0" 
+                    Clicked="Agregar"/>
         </StackLayout>
     </Grid>
 </ContentPage>

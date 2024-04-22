@@ -8,18 +8,121 @@
     <Label Text="Reservaciones"
                FontSize="Title"
                HorizontalTextAlignment="Center"
-               TextColor="Black"/>
+               TextColor="#376A10"/>
 
+<<<<<<< HEAD
+        <Grid Grid.Row="1" Margin="-5,-30,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Frame Padding="10" VerticalOptions="Center" WidthRequest="380" BorderColor="Transparent" HeightRequest="45" Opacity="0.7" Margin="10,20,0,0" BackgroundColor="LightGray">
+                    <Grid>
+                        <SearchBar CancelButtonColor="Black"
+=======
     <Grid Grid.Row="1" Margin="-5,-30,0,0">
         <StackLayout Orientation="Horizontal">
             <Frame Padding="10" VerticalOptions="Center" WidthRequest="290" BorderColor="Transparent" HeightRequest="45" Opacity="0.7" Margin="10,20,0,0" BackgroundColor="LightGray">
                 <Grid>
                     <SearchBar CancelButtonColor="Black"
+>>>>>>> 9fbc48d5e3b16ee85a69fbc595db4fde64d8fa24
                                    Placeholder="Buscar Reservaciones"
                                    PlaceholderColor="Black"
                                    FontSize="Subtitle"
                                    Margin="-20,0,-20,-5"
                                    VerticalOptions="StartAndExpand"/>
+<<<<<<< HEAD
+                    </Grid>
+                </Frame>
+
+            </StackLayout>
+        </Grid>
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2" x:Name="reservacionesUsuarioList" ItemsSource="{Binding listaReservacionesUsuario}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10,10,10,0" Margin="5" CornerRadius="8" BorderColor="LightGray" HasShadow="True" HeightRequest="260">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Column="0" Orientation="Vertical" Spacing="3">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="ID#: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                            <Span Text="{Binding id}" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Matricula: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                            <Span Text="{Binding matricula}" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Estudiante: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                            <Span Text="{Binding nombreestudiante}" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Materia: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                            <Span Text="{Binding nombremateria}" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Codigo: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                    <Label Text="{Binding codigos}" FontSize="Subtitle" FontAttributes="Bold"/>
+                                    <Label Text="   Codigo: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                    <Label Text="{Binding curso}" FontSize="Subtitle" FontAttributes="Bold"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Equipo: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                    <Label Text="{Binding nombreproducto}" FontAttributes="Bold"  FontSize="Subtitle"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Hora Inicial: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                    <Label Text="{Binding horainicial}" FontSize="Subtitle" FontAttributes="Bold"/>
+                                    <Label Text="   Hora Final: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                    <Label Text="{Binding horafin}" FontSize="Subtitle" FontAttributes="Bold"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Fecha: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                    <Label Text="{Binding fechareserva}" FontSize="Subtitle" FontAttributes="Bold"/>
+                                    <Label Text="   Estatus: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                    <Label Text="{Binding estatuse}" FontSize="Subtitle" FontAttributes="Bold"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Auxiliar: " FontAttributes="Bold" TextColor="Gray" FontSize="Subtitle"/>
+                                    <Label Text="{Binding nombreauxiliar}" FontAttributes="Bold"  FontSize="Subtitle"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+=======
                 </Grid>
             </Frame>
             <Button Text="Agregar"
@@ -35,6 +138,7 @@
                         Opacity="0.7"/>
 
         </StackLayout>
+>>>>>>> 9fbc48d5e3b16ee85a69fbc595db4fde64d8fa24
     </Grid>
     <CollectionView Grid.Row="2" Grid.ColumnSpan="2" x:Name="reservacionesList" ItemsSource="{Binding listaReservaciones}">
         <CollectionView.ItemTemplate>

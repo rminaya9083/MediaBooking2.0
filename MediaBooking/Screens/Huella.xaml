@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MediaBooking.Screens.Huella"
+             Shell.ForegroundColor="Black"
+             Title="Huella">
+
+    <Grid>
+        <Button Text="Configurar Huella" 
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="StartAndExpand"
+                Margin="10,50,10,0"
+                HeightRequest="50"
+                FontSize="Subtitle"
+                FontAttributes="Bold"
+                CornerRadius="7"
+                BackgroundColor="LightGray"
+                TextColor="Black"
+                Clicked="Button_Huella"/>
+    </Grid>
+
+
+</ContentPage>

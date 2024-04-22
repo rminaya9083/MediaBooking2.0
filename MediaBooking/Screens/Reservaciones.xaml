@@ -12,7 +12,7 @@
 
         <Grid Grid.Row="1" Margin="-5,-30,0,0">
             <StackLayout Orientation="Horizontal">
-                <Frame Padding="10" VerticalOptions="Center" WidthRequest="290" BorderColor="Transparent" HeightRequest="45" Opacity="0.7" Margin="10,20,0,0" BackgroundColor="LightGray">
+                <Frame Padding="10" VerticalOptions="Center" WidthRequest="380" BorderColor="Transparent" HeightRequest="45" Opacity="0.7" Margin="10,20,0,0" BackgroundColor="LightGray">
                     <Grid>
                         <SearchBar CancelButtonColor="Black"
                                    Placeholder="Buscar Reservaciones"
@@ -22,17 +22,6 @@
                                    VerticalOptions="StartAndExpand"/>
                     </Grid>
                 </Frame>
-                <Button Text="Agregar"
-                        FontSize="Small"
-                        TextColor="Black"
-                        FontAttributes="Bold"
-                        BackgroundColor="LightGray"
-                        CornerRadius="8"
-                        HeightRequest="45"
-                        Margin="10,20,0,0"
-                        WidthRequest="80"
-                        Padding="0"
-                        Opacity="0.7"/>
 
             </StackLayout>
         </Grid>
