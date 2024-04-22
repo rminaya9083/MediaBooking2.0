@@ -1,7 +1,5 @@
 using MediaBooking.Models;
 using MediaBooking.API;
-
-
 namespace MediaBooking.Screens;
 
 public partial class ReservacionesUsuario : ContentPage

@@ -13,16 +13,14 @@ public partial class Usuario : ContentPage
         InitializeComponent();
     }
 
-<<<<<<< HEAD
+
     private async void Button_AgregarUsuario(object sender, EventArgs e)
     {
         var addUserPage = new Pages.Usuario();
         addUserPage.Disappearing += (sender, e) => OnAppearing();
         await Navigation.PushAsync(new Pages.Usuario());
     }
-=======
-    
->>>>>>> d3694a5188752e4526a8cf7af31769c7e9b8313f
+
 
     protected override async void OnAppearing()
     {
