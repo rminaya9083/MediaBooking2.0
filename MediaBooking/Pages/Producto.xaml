@@ -4,13 +4,14 @@
              x:Class="MediaBooking.Pages.Producto"
              Shell.TitleColor="#376A10"
              Shell.BackgroundColor="#FAFAFA"
-             Title="Producto">
+             Title="Producto"
+             x:Name="parent">
 
     <Grid RowDefinitions=".8*,.2*" BackgroundColor="#FAFAFA">
         <Grid Grid.Row="0">
             <StackLayout Orientation="Vertical" Margin="5,0,5,0">
                 <Label Text="Registrar Producto" Margin="15,10,0,0" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                <Label Text="Tipo de producto:" 
+                <Label Text="Nombre producto:" 
                        Margin="15,30,0,0" 
                        FontSize="Subtitle" 
                        FontAttributes="Bold" 
@@ -44,7 +45,7 @@
                            HeightRequest="50" 
                            BorderColor="Black"
                            />
-                    <Entry x:Name="descripcion_producto" Placeholder="Descripción"
+                    <Entry x:Name="descripcion" Placeholder="Descripción"
                       FontSize="Subtitle"
                       Margin="15,0,10,-6.9"
                       VerticalOptions="FillAndExpand"
@@ -65,27 +66,27 @@
                            HeightRequest="50" 
                            BorderColor="Black"
                            />
-                    <Entry x:Name="tipo_producto" Placeholder="Tipo de producto"
-                      FontSize="Subtitle"
-                      Margin="15,0,10,-6.9"
-                      VerticalOptions="FillAndExpand"
-                      ClearButtonVisibility="WhileEditing"
-                      PlaceholderColor="#6F6F6F" 
-                      TextColor="Black"/>
+                    <Picker x:Name="tipo"
+  FontSize="Subtitle"
+  Margin="15,0,10,-6.9"
+  VerticalOptions="FillAndExpand"
+  TextColor="Black"/>
                 </Grid>
                 
             </StackLayout>
 
-            <StackLayout Grid.Row="1">
-                <Button Text="Agregar"
-       FontSize="Subtitle"
-       HorizontalOptions="FillAndExpand"
-       HeightRequest="50"
-       CornerRadius="7"
-       BackgroundColor="#376A10"
-       FontAttributes="Bold"
-       Margin="50,60,50,0" />
-            </StackLayout>
+            
         </Grid>
+        <StackLayout Grid.Row="1">
+            <Button Text="Agregar"
+                    Clicked="OnSubmit"
+FontSize="Subtitle"
+HorizontalOptions="FillAndExpand"
+HeightRequest="50"
+CornerRadius="7"
+BackgroundColor="#376A10"
+FontAttributes="Bold"
+Margin="50,60,50,0" />
+        </StackLayout>
     </Grid>
 </ContentPage>

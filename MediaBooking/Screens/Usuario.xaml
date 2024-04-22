@@ -39,7 +39,7 @@
                         WidthRequest="80"
                         Padding="0"
                         Opacity="0.7"
-                        Clicked="Button_AgregarUsuario"/>
+                        />
 
             </StackLayout>
         </Grid>

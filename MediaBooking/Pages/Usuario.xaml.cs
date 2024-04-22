@@ -79,13 +79,15 @@ public partial class Usuario : ContentPage
 		UsuarioClass Usuario = new()
 		{
 			usuario = user.Text.Trim(),
-			nombre_usuario = nombre_usuario.Text.Trim(),
-			apellido_usuario = apellido_usuario.Text.Trim(),
-			correo_usuario = email.Text.Trim(),
-			telefono_usuario = telefono.Text.Trim(),
-			direccion_usuario = direccion.Text.Trim(),
-			tipo_usuario = tipoUsuario,
-			clave_usuario = password.Text.Trim(),
+			nombre = nombre_usuario.Text.Trim(),
+			apellido = apellido_usuario.Text.Trim(),
+			correo = email.Text.Trim(),
+			telefono = telefono.Text.Trim(),
+			direccion = direccion.Text.Trim(),
+			rol = tipoUsuario,
+			clave = password.Text.Trim(),
+			registro = DateTime.Now,
+			
 
 		};
 

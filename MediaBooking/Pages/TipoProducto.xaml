@@ -59,16 +59,17 @@
                 
             </StackLayout>
 
-            <StackLayout Grid.Row="1">
-                <Button Text="Agregar"
-       FontSize="Subtitle"
-       HorizontalOptions="FillAndExpand"
-       HeightRequest="50"
-       CornerRadius="7"
-       BackgroundColor="#376A10"
-       FontAttributes="Bold"
-       Margin="50,60,50,0" />
-            </StackLayout>
+            
         </Grid>
+        <StackLayout Grid.Row="1">
+            <Button Text="Agregar"
+FontSize="Subtitle"
+HorizontalOptions="FillAndExpand"
+HeightRequest="50"
+CornerRadius="7"
+BackgroundColor="#376A10"
+FontAttributes="Bold"
+Margin="50,60,50,0" />
+        </StackLayout>
     </Grid>
 </ContentPage>

@@ -17,6 +17,8 @@ namespace MediaBooking.Models
         [Column("IdTipoProducto")]
         public int? IdTipoProducto { get; set; }
 
+        
+
         //[ForeignKey("IdTipoProducto")] // Asegúrate de que esto corresponde al nombre de la columna de FK en la base de datos
         //public virtual TipoProducto TipoProducto { get; set; }
     }

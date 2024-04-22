@@ -13,10 +13,7 @@ public partial class Usuario : ContentPage
 		InitializeComponent();
 	}
 
-    private async void Button_AgregarUsuario(object sender, EventArgs e)
-    {
-		await Navigation.PushAsync(new Pages.Usuario());
-    }
+    
 
     protected override async void OnAppearing()
     {

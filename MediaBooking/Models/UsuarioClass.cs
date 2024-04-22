@@ -1,9 +1,11 @@
-﻿using System;
+﻿using MediaBooking.Screens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace MediaBooking.Models
@@ -24,5 +26,7 @@ namespace MediaBooking.Models
 
         [Column("FechaRegistro")]
         public DateTime registro { get; set; }
+
+        
     }
 }

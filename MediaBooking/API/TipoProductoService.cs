@@ -20,7 +20,7 @@ namespace MediaBooking.API
 
         }
 
-        public async Task<List<TipoProductoClass>>GetTipoProductoAsync()
+        public async Task<List<TipoProductoClass>> GetTipoProductoAsync()
         {
             try
             {
